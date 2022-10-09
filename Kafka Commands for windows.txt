@@ -1,0 +1,10 @@
+start zookeeper
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+
+start kafka broker service
+bin\windows\kafka-server-start.bat config\server.properties
+
+
+read events from topic fmgTopic
+bin\windows\kafka-console-consumer.bat --topic fmgTopic --from-beginning --bootstrap-server localhost:9092
